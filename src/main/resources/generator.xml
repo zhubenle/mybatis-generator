@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <classPathEntry location="/Users/benlezhu/IdeaProjects/generator/src/main/resources/mysql-connector-java-5.1.45-bin.jar"/>
+
+    <context id="generator" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.VirtualPrimaryKeyPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+        <!--<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />-->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin">
+            <property name="useEqualsHashCodeFromRoot" value="false"/>
+        </plugin>
+        <!--<plugin type="org.mybatis.generator.plugins.SerializablePlugin">-->
+            <!--<property name="suppressJavaInterface" value="false"/>-->
+        <!--</plugin>-->
+
+        <plugin type="cn.mybatis.generator.plugin.CommonPlugin">
+            <!--<property name="newMapperSubName" value="DAO"/>-->
+            <property name="createOptimizePageSql" value="false"/>
+            <property name="addBaseMapperRepositoryAnnotation" value="true"/>
+            <property name="createReadAndEditMapper" value="false"/>
+            <property name="targetProject" value="/src/main/resources"/>
+            <property name="targetEditMapperPackage" value="cn.mybatis.dao.edit"/>
+            <property name="targetReadMapperPackage" value="cn.mybatis.dao.read"/>
+        </plugin>
+
+        <!--<plugin type="com.zbl.forum.generator.plugins.CreateServicePlugin">-->
+            <!--<property name="targetProject" value="forum-generator/src/main/java"/>-->
+            <!--<property name="targetPackage" value="com.zbl.forum.core.service"/>-->
+        <!--</plugin>-->
+
+        <commentGenerator type="cn.mybatis.generator.plugin.MyCommentGenerator">
+        </commentGenerator>
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/consult?tinyInt1isBit=false" userId="root" password="123456"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/dev_mall" userId="dev_user" password="dev_20160317"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/car_source" userId="crawler_user" password="dev_20170911NO3"/>-->
+        <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://192.168.2.36:1433; DatabaseName=basic_car_model" userId="iautos_test" password="3vBZDXAmjDeu"/>-->
+        <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://192.168.2.36:1433; DatabaseName=basic_model_library" userId="iautos_test" password="3vBZDXAmjDeu"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/seo_keywords" userId="seo_user" password="sx(k#2x.s"/>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/foundation" userId="dev_user" password="dev_20160317"/>
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://211.151.78.217:3308/mall" userId="mall_user" password="mall@99.com"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/car_source" userId="crawler_user" password="dev_20170911NO3"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_lanbenjia" userId="carmodel_sync" password="dev_201711150NO1"/>-->
+        <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@211.151.73.6:1521:portal" userId="nportal" password="gG6AyUu!tB"/>-->
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_new?tinyInt1isBit=false" userId="test" password="test"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_message_system?tinyInt1isBit=false" userId="message_sys" password="message_sys@iautos"/>-->
+
+        <!-- java类型处理器 用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl； 注意一点，默认会先尝试使用Integer，Long，Short等来对应DECIMAL和 NUMERIC数据类型； -->
+        <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+            <!-- true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型 -->
+            <!-- false：默认, -->
+            <!-- scale>0;length>18：使用BigDecimal; -->
+            <!-- scale=0;length[10,18]：使用Long； -->
+            <!-- scale=0;length[5,9]：使用Integer； -->
+            <!-- scale=0;length<5：使用Short； -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cn.mybatis.entity" targetProject="/src/main/java">
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="/src/main/resources">
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="cn.mybatis.dao" targetProject="/src/main/java" type="XMLMAPPER">
+        </javaClientGenerator>
+
+        <!--<table tableName="sgw_channel_report">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<property name="virtualKeyColumns" value="id" />-->
+            <!--<columnOverride column="content" property="content" javaType="java.lang.String" jdbcType="VARCHAR"/>-->
+        <!--</table>-->
+        <table tableName="car_model" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
