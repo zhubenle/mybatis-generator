@@ -41,20 +41,7 @@
         <commentGenerator type="cn.mybatis.generator.plugin.MyCommentGenerator">
         </commentGenerator>
 
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/consult?tinyInt1isBit=false" userId="root" password="123456"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/dev_mall" userId="dev_user" password="dev_20160317"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/car_source" userId="crawler_user" password="dev_20170911NO3"/>-->
-        <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://192.168.2.36:1433; DatabaseName=basic_car_model" userId="iautos_test" password="3vBZDXAmjDeu"/>-->
-        <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://192.168.2.36:1433; DatabaseName=basic_model_library" userId="iautos_test" password="3vBZDXAmjDeu"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/seo_keywords" userId="seo_user" password="sx(k#2x.s"/>-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/foundation" userId="dev_user" password="dev_20160317"/>
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://211.151.78.217:3308/mall" userId="mall_user" password="mall@99.com"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/car_source" userId="crawler_user" password="dev_20170911NO3"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_lanbenjia" userId="carmodel_sync" password="dev_201711150NO1"/>-->
-        <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@211.151.73.6:1521:portal" userId="nportal" password="gG6AyUu!tB"/>-->
-
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_new?tinyInt1isBit=false" userId="test" password="test"/>-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.250:3306/iautos_message_system?tinyInt1isBit=false" userId="message_sys" password="message_sys@iautos"/>-->
 
         <!-- java类型处理器 用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl； 注意一点，默认会先尝试使用Integer，Long，Short等来对应DECIMAL和 NUMERIC数据类型； -->
         <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
